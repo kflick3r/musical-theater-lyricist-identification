@@ -1,0 +1,16 @@
+# Data processing
+pandas
+numpy
+
+# NLP and machine learning
+scikit-learn
+nltk
+sentence-transformers
+
+# Visualization
+matplotlib
+seaborn
+
+# Jupyter notebooks
+jupyter
+ipykernel

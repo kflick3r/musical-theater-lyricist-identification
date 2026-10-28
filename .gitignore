@@ -218,3 +218,33 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# ==========================================
+# NLP Final Project - Musical Theater Lyrics
+# ==========================================
+
+# Song lyrics and datasets
+data/raw/
+data/processed/
+
+# Trained models and checkpoints
+models/
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+
+# Serialized machine learning models
+*.pkl
+*.joblib
+
+# Hugging Face downloaded models
+.cache/huggingface/
+
+# Additional environment files
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
