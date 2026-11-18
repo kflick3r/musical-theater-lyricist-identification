@@ -248,3 +248,6 @@ checkpoints/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+# Related Work/ Research
+docs/related_work
