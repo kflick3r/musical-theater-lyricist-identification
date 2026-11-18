@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>interim_project_report.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="interim-project-report">Interim Project Report</h1>
+<p><strong>Project:</strong> Musical Theatre Lyricist Identification Using NLP</p>
+<h3 id="1-project-summary">1. Project Summary</h3>
+<p>For my final project, I am exploring whether NLP techniques can identify who wrote a musical theatre song based on its lyrics. The study focuses on four lyricists: Stephen Sondheim, Stephen Schwartz, Jason Robert Brown, and Oscar Hammerstein II.</p>
+<p>The main goal is to compare a traditional word-level TF-IDF model with a model using pretrained Transformer embeddings. I am also interested in whether these models learn characteristics of a lyricist's writing style or rely on vocabulary and themes specific to individual musicals.</p>
+<h3 id="2-data">2. Data</h3>
+<p>I am building a dataset of musical theatre song lyrics, organized by lyricist, musical, and individual song. The current target is six musicals per lyricist, allowing four musicals to be used for training and two to be held out for testing.</p>
+<p>I have been collecting lyrics primarily from <a href="https://www.allmusicals.com/">AllMusicals</a> and <a href="https://genius.com/">Genius</a>. So far, I've focused on collecting and cleaning lyrics from Jason Robert Brown's musicals. I've collected 58 songs containing approximately 19,000 words.</p>
+<p>This has involved manually reviewing lyrics against recordings, removing spoken dialogue, character labels, and stage directions while preserving sung repetitions. Since I am creating my dataset from scratch rather than using an existing one, data collection and preprocessing have taken a significant amount of time.</p>
+<h3 id="3-approach">3. Approach</h3>
+<p>I plan to compare two classification approaches:</p>
+<ol>
+<li><strong>TF-IDF + Logistic Regression:</strong> Represent each song using word-level TF-IDF features and train a classifier to predict its lyricist.</li>
+<li><strong>Pretrained Transformer Embeddings + Logistic Regression:</strong> Generate fixed contextual representations of each song using a pretrained Transformer model and train a classifier using those representations.</li>
+</ol>
+<p>I plan to use Python and scikit-learn for TF-IDF vectorization, Logistic Regression, and evaluation, along with Hugging Face Transformers for generating pretrained embeddings.</p>
+<p>Both approaches will be evaluated using accuracy, precision, recall, F1-score, and confusion matrices.</p>
+<p>I also plan to compare random song-level train/test splits with held-out-musical evaluation. This will help determine whether the models generalize to songs from musicals they have not encountered during training.</p>
+<h3 id="4-progress-so-far">4. Progress So Far</h3>
+<p>Most of my work so far has focused on data collection and preprocessing. I've established a process for reviewing individual songs, checking lyrics for accuracy, and excluding tracks that aren't appropriate for lyricist attribution. I've also started looking at song lengths and word counts to get a better understanding of the data.</p>
+<p>One challenge has been determining how to handle songs containing very little lyrical material. Several songs in <em>Parade</em> contain fewer than 100 words, which may make authorship identification more difficult. For now, I've decided to keep four particularly short songs until I have a better idea of how they might affect the models.</p>
+<p>Another consideration is repeated lyrical material across songs within the same musical. Repeated lyrics may provide meaningful stylistic information, but they could also lead to overly optimistic results if similar songs from the same musical appear in both training and testing data.</p>
+<p>I have not yet begun classification experiments, as my initial priority has been developing a consistent dataset and preprocessing workflow.</p>
+<h3 id="5-next-steps">5. Next Steps</h3>
+<p>Over the next two weeks, I plan to continue collecting lyrics for additional musicals and lyricists. I also hope to begin implementing the TF-IDF baseline once I have enough data for some preliminary experiments.</p>
+<p>I expect that collecting enough lyrics while keeping the data accurate and consistent will continue to be my biggest challenge.</p>
+<h3 id="6-questions-or-concerns">6. Questions or Concerns</h3>
+<p>My main concern at the moment is collecting enough data to train the models effectively. Since I am building the dataset from scratch, I want to spend sufficient time verifying the lyrics and ensuring the data is accurate and consistent. However, I am also concerned about balancing data quality with the amount of data needed for meaningful classification results.</p>
+<p>Given the number of songs available per lyricist, do you think my planned dataset will be sufficient for comparing these two approaches, or should I consider adjusting the scope of the project?</p>
+
+</body>
+</html>
